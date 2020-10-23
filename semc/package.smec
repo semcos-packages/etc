@@ -1,0 +1,14 @@
+metadata:
+ - name: "etc"
+ - license: "MPLv2"
+ - description: "SEMC OS is an Open Source Software Project, working in coalition and under Nexus Aurora, that strives to create Software for Mission Control."
+ - source: "https://github.com/semcos-packages/etc"
+ - source-git: "true"
+ - vars: "DESTDIR"
+ - build-depends-on: "cp"
+
+build:
+ - type: "source"
+ - version: "0.0.4a"
+ - steps:
+  - step: "cp ./0.0.4a/* ${DESTDIR}/etc"

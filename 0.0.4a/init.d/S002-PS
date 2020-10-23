@@ -1,0 +1,22 @@
+#!/bin/sh
+
+# Initialize the PS1 and PS2
+
+case "$1" in
+	start)
+		printf "Setting PS1 and PS2... "
+		exec 2>&1
+		export PS1="\u@\h \w "
+		if [ $EUID -eq 0 ]; then
+			export PS1="$PS1#"
+		else
+			export PS1="$PS1$"
+		fi
+		echo "OK"
+		;;
+	*)
+		echo $"Usage: $0 start"
+		exit 1
+esac
+
+exit $?

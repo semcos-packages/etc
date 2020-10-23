@@ -1,10 +1,13 @@
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this
+# file, You can obtain one at https://mozilla.org/MPL/2.0/.
+
 export PATH=/bin:/usr/bin
 
 if [ `id -u` -eq 0 ] ; then
         PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin
         unset HISTFILE
 fi
-
 
 # Set up some enironment variables
 export USER=`id -un`

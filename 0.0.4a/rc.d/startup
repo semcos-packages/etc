@@ -4,6 +4,13 @@
 # License, v. 2.0. If a copy of the MPL was not distributed with this
 # file, You can obtain one at https://mozilla.org/MPL/2.0/.
 
+for f in /etc/rc.d/init.d/*
+do
+	# Ignore dangling symlinks
+	[ ! -f "$f" ] && continue
+	$f start
+done
+
 # Start all init scripts in /etc/init.d
 # executing them in numerical order
 for i in /etc/init.d/S???* ;do
